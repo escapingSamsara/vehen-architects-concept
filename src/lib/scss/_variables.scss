@@ -1,0 +1,24 @@
+:root {
+	// Fonts
+	--font--default: Nunito Sans, sans-serif;
+	--font--title:Nunito Sans, sans-serif;
+	--font--mono: Nunito Sans, monospace;
+
+	// Grabbed from open-props.style
+	--ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+	--ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+	--ease-out-1: cubic-bezier(0, 0, 0.75, 1);
+	--ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+	--ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+
+	//Border-radius:
+	--border-radius-default: 8px;
+
+	//TYPO:
+	--main-text-font-size: clamp(0.875rem, 0.8333rem + 0.2222vw, 1rem);
+	--main-text-line-height: clamp(1.1375rem, 1.0833rem + 0.2889vw, 1.3rem);
+	--text-box-header-font-size: clamp(0.875rem, 0.8333rem + 0.2222vw, 1rem);
+	--section-header-font-size: clamp(3.125rem, 2.1875rem + 5vw, 5.625rem);
+	--contact-section-header-font-size: clamp(3rem, 3.9932rem + -5.2969vw, 0.3515625rem);
+	--section-header-line-height: clamp(3.4375rem, 2.4063rem + 5.5vw, 6.1875rem);
+}

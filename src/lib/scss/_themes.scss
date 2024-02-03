@@ -1,0 +1,87 @@
+@import '$lib/scss/_mixins.scss';
+
+@mixin base-theme {
+	//@include define-color('primary', #78e6d0);
+	@include define-color('primary', #00adb5);
+	@include define-color('primary-shade', #008d93);
+	@include define-color('primary-tint', #4dc6cb);
+
+	@include define-color('main-btn-hover-color', #5e6266);
+	@include define-color('main-btn-hover-color-dark', #444444);
+	@include define-color('secondary-btn-hover-color', #d4dae0);
+	@include define-color('secondary-btn-bg-color', #eaeff2);
+
+	@include define-color('secondary', #009688);
+	@include define-color('secondary-shade', #00877a);
+	@include define-color('secondary-tint', #00b7a6);
+
+	@include define-color('text', #1c1e26);
+	@include define-color('text-shade', #14151b);
+	@include define-color('text-inverse', #606267);
+	@include define-color('text-inverse-shade', #434548);
+
+	@include define-color('light-grey', #eaeff2);
+	@include define-color('light-grey-shade', #a4a7a9);
+	@include define-color('light-grey-tint', #f0f4f6);
+
+	@include define-color('page-background', #f8f8f8);
+	@include define-color('page-background-inverse', #1c1e26);
+
+	@include define-color('post-page-background', #aeaeae);
+	@include define-color('card-background', #f0f4f7);
+	@include define-color('card-background-hover', #e9eff4);
+
+	@include define-color('border-color-light', #e4eaed);
+
+	--card-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+	--card-shadow-hover: 0px 4px 10px 8px rgb(0 0 0 / 10%);
+	--image-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
+}
+
+@mixin dark-theme {
+	//@include define-color('primary', #78e6d0);
+	@include define-color('primary', #00adb5);
+	@include define-color('primary-shade', #008d93);
+	@include define-color('primary-tint', #4dc6cb);
+
+	@include define-color('secondary', #009688);
+	@include define-color('secondary-shade', #00877a);
+	@include define-color('secondary-tint', #00b7a6);
+
+	@include define-color('text', #ffffff);
+	@include define-color('text-shade', #b3b3b3);
+	@include define-color('text-inverse', #606267);
+	@include define-color('text-inverse-shade', #1d1d1f);
+
+	@include define-color('page-background', #1c1e26);
+	@include define-color('page-background-inverse', #f8f8f8);
+	@include define-color('post-page-background', #14151b);
+	@include define-color('card-background', #606267);
+	@include define-color('card-background-hover', #56585d);
+	// Used for Callout component
+	@include define-color('callout-background', #1c1e26);
+	@include define-color('callout-background--info', #1d3874);
+	@include define-color('callout-accent--info', #6ca9f7);
+	@include define-color('callout-background--warning', #724413);
+	@include define-color('callout-accent--warning', #ffca39);
+	@include define-color('callout-background--error', #7c1d20);
+	@include define-color('callout-accent--error', #ff8082);
+	@include define-color('callout-background--success', #004737);
+	@include define-color('callout-accent--success', #00c48f);
+
+	@include define-color('code-inline-background', #2b3131);
+}
+
+:root {
+	@include base-theme;
+
+	&[data-theme='dark'] {
+		@include dark-theme;
+	}
+
+	&[data-theme='auto'] {
+		@media (prefers-color-scheme: dark) {
+			@include dark-theme;
+		}
+	}
+}

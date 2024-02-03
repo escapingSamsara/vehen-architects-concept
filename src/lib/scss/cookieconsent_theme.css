@@ -1,0 +1,68 @@
+@import '@fontsource/lato';
+#cc-main {
+	--cc-bg: var(--color--page-background);
+	--cc-primary-color: var(--color--text);
+	--cc-secondary-color: var(--color--text-shade);
+	/*#2c2f31*/
+	/** Change font **/
+	--cc-font-family: Lato, sans-serif;
+
+	/**button primary color**/
+	--cc-btn-primary-bg: var(--color--primary);
+	--cc-btn-primary-border-color: var(--color--primary);
+	--cc-btn-primary-hover-bg: var(--color--main-btn-hover-color);
+	--cc-btn-primary-hover-border-color: var(--color--main-btn-hover-color);
+
+	/** Also make toggles the same color as the button **/
+	--cc-toggle-on-bg: var(--cc-btn-primary-bg);
+
+	/** Make the buttons a bit rounder **/
+	--cc-btn-border-radius: 10px;
+
+	--cc-btn-primary-color: #ffffff;
+	--cc-btn-primary-hover-color: #ffffff;
+
+	--cc-btn-secondary-bg: var(--color--light-grey);
+	--cc-btn-secondary-color: var(--color--text-inverse);
+	--cc-btn-secondary-border-color: var(--cc-btn-secondary-bg);
+	--cc-btn-secondary-hover-bg: #d4dae0;
+	--cc-btn-secondary-hover-color: var(--color--text-inverse-shade);
+	--cc-btn-secondary-hover-border-color: transparent;
+
+	--cc-separator-border-color: var(--color--card-background);
+
+	--cc-toggle-off-bg: #667481;
+	--cc-toggle-on-knob-bg: #ffffff;
+	--cc-toggle-off-knob-bg: var(--cc-toggle-on-knob-bg);
+
+	--cc-toggle-enabled-icon-color: var(--cc-bg);
+	--cc-toggle-disabled-icon-color: var(--cc-bg);
+
+	--cc-toggle-readonly-bg: #d5dee2;
+	--cc-toggle-readonly-knob-bg: #fff;
+	--cc-toggle-readonly-knob-icon-color: var(--cc-toggle-readonly-bg);
+
+	--cc-section-category-border: transparent;
+
+	--cc-cookie-category-block-bg: var(--color--card-background);
+	--cc-cookie-category-block-border: transparent;
+	--cc-cookie-category-block-hover-bg: var(--color--card-background-hover);
+	--cc-cookie-category-block-hover-border: transparent;
+	--cc-cookie-category-expanded-block-bg: var(--color--card-background);
+	--cc-cookie-category-expanded-block-hover-bg: transparent;
+
+	--cc-overlay-bg: rgba(0, 0, 0, 0.65);
+	--cc-webkit-scrollbar-bg: var(--cc-section-category-border);
+	--cc-webkit-scrollbar-hover-bg: var(--cc-btn-primary-hover-bg);
+
+	--cc-footer-bg: var(--color--page-background);
+	--cc-footer-color: var(--cc-secondary-color);
+	--cc-footer-border-color: var(--color--card-background);
+}
+
+:global(#cc-main) {
+	.pm__section:not(:first-child):hover {
+		background: var(--cc-cookie-category-block-bg);
+		border-color: var(--cc-cookie-category-block-border);
+	}
+}

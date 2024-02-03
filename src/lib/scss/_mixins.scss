@@ -1,0 +1,96 @@
+@import './_breakpoints.scss';
+@import './_functions.scss';
+@mixin flex-center {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+@mixin full-height-width {
+	height: 100%;
+	width: 100%;
+}
+
+@mixin cta-button {
+	background: var(--color--primary);
+	border: none;
+	outline: none;
+	color: #ffffff;
+	border-radius: var(--border-radius-default);
+	padding: 0.3rem 0.6rem;
+	transition: all 0.125s linear;
+
+	&:hover {
+		transition: all 0.125s linear;
+		background: var(--color--main-btn-hover-color);
+	}
+}
+
+@mixin main-text-size-height {
+	font-size: var(--main-text-font-size);
+	line-height: var(--main-text-line-height);
+}
+@mixin text-box-header-size-height {
+	font-size: var(--main-text-font-size);
+	line-height: var(--main-text-line-height);
+	font-weight: lighter;
+	padding-bottom: 0.25rem;
+}
+@mixin section-header-size-height {
+	font-family: var(--font--title);
+	font-size: var(--section-header-font-size);
+	line-height: var(--section-header-line-height);
+}
+
+@mixin contact-section-size-height {
+	font-family: var(--font--title);
+	font-size: var(--contact-section-header-font-size);
+	line-height: var(--section-header-line-height);
+}
+
+@mixin padded-container {
+	height: 100%;
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+
+	@include for-iphone-se {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@include for-tablet-portrait-up {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	@include for-tablet-landscape-up {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+
+	@include for-desktop-up {
+		max-width: 1400px;
+	}
+}
+
+// Defines a bunch of CSS variables for a given color
+// In HEX, HSL and RGB formats
+// Plus a contrast option for text
+@mixin define-color($title, $color) {
+	--color--#{$title}: #{$color};
+
+	--color--#{$title}-h: #{hue($color)};
+	--color--#{$title}-l: #{lightness($color)};
+	--color--#{$title}-s: #{saturation($color)};
+	--color--#{$title}-a: #{alpha($color)};
+
+	--color--#{$title}-rgb: #{red($color)}, #{green($color)}, #{blue($color)};
+
+	--color--#{$title}-contrast: #{if(
+			brightness($color) > 186,
+			var(--color--text),
+			var(--color--text-inverse)
+		)};
+}
