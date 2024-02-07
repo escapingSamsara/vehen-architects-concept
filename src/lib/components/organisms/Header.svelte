@@ -1,8 +1,8 @@
 <script lang="ts">
 	import ThemeToggle from '$lib/components/molecules/ThemeToggle.svelte';
 
+	import CompanyLogo from '$lib/icons/CompanyLogo.svelte';
 	import { onMount } from 'svelte';
-	import CompanyLogo from "$lib/icons/CompanyLogo.svelte";
 	let opacity = 1;
 	let lastScroll = 0;
 	let showHeader = true; // Control the visibility of the header
@@ -29,21 +29,21 @@
 		<div class="logo">
 			<button title="i want to go home">
 				<a href="/">
-					<CompanyLogo/>
+					<CompanyLogo />
 				</a>
 			</button>
 		</div>
 		<div class="links">
-						<div class="nav-link-box">
-							<ul class="nav-links-list">
-								<li ><a href="/">home</a></li>
-								<li><a href="/about">about</a></li>
-								<li><a href="/projects">projects</a></li>
-								<li><a href="/blog">blog</a></li>
-								<li><a href="/contact">contact</a></li>
-							</ul>
-						</div>
-<!--			<ThemeToggle />-->
+			<div class="nav-link-box">
+				<ul class="nav-links-list">
+					<li><a href="/">home</a></li>
+					<li><a href="/projects">projects</a></li>
+					<!-- <li><a href="/about">about</a></li> -->
+					<!-- <li><a href="/blog">blog</a></li> -->
+					<!-- <li><a href="/contact">contact</a></li> -->
+				</ul>
+			</div>
+			<!--			<ThemeToggle />-->
 		</div>
 	</nav>
 </header>
@@ -100,13 +100,15 @@
 				width: 100%;
 				.nav-links-list {
 					display: flex;
-					justify-content: space-between;
+					// justify-content: space-between;
+					justify-content: flex-end;
 					align-items: center;
 					list-style: none;
 					text-transform: uppercase;
 					font-size: 0.75rem;
 
 					li {
+						padding-left: 20px;
 						transition: all 0.125s ease-in-out;
 						&:hover {
 							cursor: pointer;
